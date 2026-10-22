@@ -1,3 +1,2 @@
-#SPDX-License-Identifier: MIT-0
----
-# tasks file for s9277817.redis
+- name: Install Redis
+  include_tasks: redis_installation
