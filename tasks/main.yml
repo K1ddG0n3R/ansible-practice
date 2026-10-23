@@ -1,2 +1,2 @@
 - name: Install Redis
-  include_tasks: redis_installation
+  include_tasks: install/redis_installation.yml
