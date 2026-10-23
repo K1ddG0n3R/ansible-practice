@@ -1,3 +1,12 @@
-#SPDX-License-Identifier: MIT-0
----
-# handlers file for s9277817.redis
+- name: Enable and start Redis
+  systemd_service:
+    name: redis-server
+    state: started
+    enabled: yes
+  become: true
+
+- name: Restart Redis
+  systemd_service:
+    name: redis-server
+    state: restarted
+  become: true

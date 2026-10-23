@@ -14,7 +14,7 @@
   block:
     - name: Get redis gpg keyring
       import_tasks: add_redis_gpg_keyring.yml
-  when: gpg_keyring_exists.stat.exists == false and link_correct.status | default(0)== 200 and ansible_os_family == "Debian"
+  when: gpg_keyring_exists.stat.exists == false and link_correct.status == 200 and ansible_os_family == "Debian"
 
 - name: Add redis apt-repository
   apt_repository:

@@ -1,5 +1,5 @@
 - name: Check redis installed
-  command: which redis
+  command: which redis-server
   register: redis_installed
   ignore_errors: yes
 
@@ -25,4 +25,4 @@
   apt:
     name: redis
     update_cache: yes
-  when: redis_installed.rc != 0
+  when: redis_installed.rc != 0 and ansible_os_family == "Debian"
